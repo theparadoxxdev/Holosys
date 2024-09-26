@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class srvadm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,23 +22,17 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        components = New ComponentModel.Container()
-        Timer1 = New Timer(components)
         SuspendLayout()
         ' 
-        ' Timer1
-        ' 
-        ' 
-        ' Form1
+        ' srvadm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
-        Name = "Form1"
-        Text = "Form1"
+        Name = "srvadm"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "Holosys Server Admin"
         ResumeLayout(False)
     End Sub
-
-    Friend WithEvents Timer1 As Timer
 
 End Class
