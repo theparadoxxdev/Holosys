@@ -35,17 +35,20 @@ Partial Class login
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
-        Label4 = New Label()
+        lblServerStat = New Label()
         btnClose = New Button()
+        chkUseWinCred = New CheckBox()
+        serverstat = New Timer(components)
         CType(logo, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' logo
         ' 
         logo.Image = My.Resources.Resources.hslogodark
-        logo.Location = New Point(29, 628)
+        logo.Location = New Point(25, 450)
+        logo.Margin = New Padding(3, 2, 3, 2)
         logo.Name = "logo"
-        logo.Size = New Size(571, 138)
+        logo.Size = New Size(574, 125)
         logo.SizeMode = PictureBoxSizeMode.CenterImage
         logo.TabIndex = 0
         logo.TabStop = False
@@ -55,9 +58,9 @@ Partial Class login
         lblVersion.AutoSize = True
         lblVersion.Font = New Font("Trebuchet MS", 24F, FontStyle.Regular, GraphicsUnit.Point)
         lblVersion.ForeColor = Color.White
-        lblVersion.Location = New Point(29, 446)
+        lblVersion.Location = New Point(25, 334)
         lblVersion.Name = "lblVersion"
-        lblVersion.Size = New Size(0, 49)
+        lblVersion.Size = New Size(0, 40)
         lblVersion.TabIndex = 1
         ' 
         ' lblLicense
@@ -65,9 +68,9 @@ Partial Class login
         lblLicense.AutoSize = True
         lblLicense.Font = New Font("Trebuchet MS", 24F, FontStyle.Regular, GraphicsUnit.Point)
         lblLicense.ForeColor = Color.White
-        lblLicense.Location = New Point(29, 544)
+        lblLicense.Location = New Point(25, 408)
         lblLicense.Name = "lblLicense"
-        lblLicense.Size = New Size(0, 49)
+        lblLicense.Size = New Size(0, 40)
         lblLicense.TabIndex = 2
         ' 
         ' lblEdition
@@ -75,9 +78,9 @@ Partial Class login
         lblEdition.AutoSize = True
         lblEdition.Font = New Font("Trebuchet MS", 24F, FontStyle.Regular, GraphicsUnit.Point)
         lblEdition.ForeColor = Color.White
-        lblEdition.Location = New Point(29, 495)
+        lblEdition.Location = New Point(25, 371)
         lblEdition.Name = "lblEdition"
-        lblEdition.Size = New Size(0, 49)
+        lblEdition.Size = New Size(0, 40)
         lblEdition.TabIndex = 3
         ' 
         ' flashmessage
@@ -88,32 +91,36 @@ Partial Class login
         ' 
         btnLogin.Enabled = False
         btnLogin.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btnLogin.Location = New Point(1032, 733)
+        btnLogin.Location = New Point(903, 540)
+        btnLogin.Margin = New Padding(3, 2, 3, 2)
         btnLogin.Name = "btnLogin"
-        btnLogin.Size = New Size(94, 33)
+        btnLogin.Size = New Size(82, 35)
         btnLogin.TabIndex = 4
         btnLogin.Text = "Login"
         btnLogin.UseVisualStyleBackColor = True
         ' 
         ' txtServer
         ' 
-        txtServer.Location = New Point(712, 79)
+        txtServer.Location = New Point(623, 59)
+        txtServer.Margin = New Padding(3, 2, 3, 2)
         txtServer.Name = "txtServer"
-        txtServer.Size = New Size(414, 27)
+        txtServer.Size = New Size(363, 23)
         txtServer.TabIndex = 5
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(712, 588)
+        TextBox1.Location = New Point(623, 441)
+        TextBox1.Margin = New Padding(3, 2, 3, 2)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(414, 27)
+        TextBox1.Size = New Size(363, 23)
         TextBox1.TabIndex = 6
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(712, 667)
+        TextBox2.Location = New Point(623, 500)
+        TextBox2.Margin = New Padding(3, 2, 3, 2)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(414, 27)
+        TextBox2.Size = New Size(363, 23)
         TextBox2.TabIndex = 7
         ' 
         ' Label1
@@ -121,9 +128,9 @@ Partial Class login
         Label1.AutoSize = True
         Label1.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label1.ForeColor = SystemColors.Control
-        Label1.Location = New Point(851, 50)
+        Label1.Location = New Point(745, 38)
         Label1.Name = "Label1"
-        Label1.Size = New Size(145, 26)
+        Label1.Size = New Size(115, 22)
         Label1.TabIndex = 8
         Label1.Text = "Server Address"
         ' 
@@ -132,53 +139,71 @@ Partial Class login
         Label2.AutoSize = True
         Label2.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label2.ForeColor = SystemColors.Control
-        Label2.Location = New Point(880, 551)
+        Label2.Location = New Point(759, 408)
         Label2.Name = "Label2"
-        Label2.Size = New Size(71, 26)
+        Label2.Size = New Size(79, 22)
         Label2.TabIndex = 9
-        Label2.Text = "Label2"
+        Label2.Text = "Username"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label3.ForeColor = SystemColors.Control
-        Label3.Location = New Point(880, 629)
+        Label3.Location = New Point(759, 471)
         Label3.Name = "Label3"
-        Label3.Size = New Size(71, 26)
+        Label3.Size = New Size(75, 22)
         Label3.TabIndex = 10
-        Label3.Text = "Label3"
+        Label3.Text = "Password"
         ' 
-        ' Label4
+        ' lblServerStat
         ' 
-        Label4.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom
-        Label4.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.ForeColor = Color.Lime
-        Label4.Location = New Point(712, 130)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(414, 26)
-        Label4.TabIndex = 11
-        Label4.TextAlign = ContentAlignment.MiddleCenter
+        lblServerStat.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom
+        lblServerStat.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        lblServerStat.ForeColor = Color.Lime
+        lblServerStat.Location = New Point(623, 98)
+        lblServerStat.Name = "lblServerStat"
+        lblServerStat.Size = New Size(362, 20)
+        lblServerStat.TabIndex = 11
+        lblServerStat.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' btnClose
         ' 
         btnClose.BackColor = Color.Firebrick
         btnClose.ForeColor = SystemColors.ButtonFace
-        btnClose.Location = New Point(12, 12)
+        btnClose.Location = New Point(10, 9)
+        btnClose.Margin = New Padding(3, 2, 3, 2)
         btnClose.Name = "btnClose"
-        btnClose.Size = New Size(34, 29)
+        btnClose.Size = New Size(30, 22)
         btnClose.TabIndex = 12
         btnClose.Text = "X"
         btnClose.UseVisualStyleBackColor = False
         ' 
+        ' chkUseWinCred
+        ' 
+        chkUseWinCred.AutoSize = True
+        chkUseWinCred.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        chkUseWinCred.ForeColor = SystemColors.Control
+        chkUseWinCred.Location = New Point(623, 540)
+        chkUseWinCred.Name = "chkUseWinCred"
+        chkUseWinCred.Size = New Size(209, 26)
+        chkUseWinCred.TabIndex = 13
+        chkUseWinCred.Text = "Use Windows Credentials"
+        chkUseWinCred.UseVisualStyleBackColor = True
+        ' 
+        ' serverstat
+        ' 
+        serverstat.Enabled = True
+        ' 
         ' login
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaptionText
-        ClientSize = New Size(1193, 806)
+        ClientSize = New Size(1044, 604)
+        Controls.Add(chkUseWinCred)
         Controls.Add(btnClose)
-        Controls.Add(Label4)
+        Controls.Add(lblServerStat)
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
@@ -191,6 +216,7 @@ Partial Class login
         Controls.Add(lblVersion)
         Controls.Add(logo)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(3, 2, 3, 2)
         Name = "login"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Holosys Login"
@@ -211,7 +237,9 @@ Partial Class login
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblServerStat As Label
     Friend WithEvents btnClose As Button
+    Friend WithEvents chkUseWinCred As CheckBox
+    Friend WithEvents serverstat As Timer
 
 End Class

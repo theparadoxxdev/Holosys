@@ -1,15 +1,15 @@
 ﻿Public Class login
 
     'Define variables
-    Dim version As String
-    Dim edition As Integer
-    Dim licensevalid As Boolean
-    Dim istestlicense As Boolean
+    Public version As String
+    Public edition, serverstatus, debugc As Integer
+    Public licensevalid, istestlicense As Boolean
 
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'Initialize variables
-        Version = Me.ProductVersion
+        debugc = 0
+        version = Me.ProductVersion
         edition = 2
         licensevalid = False
         istestlicense = False
@@ -76,4 +76,44 @@
 
     End Sub
 
+    Private Sub serverstat_Tick(sender As Object, e As EventArgs) Handles serverstat.Tick
+
+        'Check server connection status
+        Select Case serverstatus
+            Case 0
+                lblServerStat.ForeColor = Color.Red
+                lblServerStat.Text = "Server not responding"
+                btnLogin.Enabled = False
+            Case 1
+                lblServerStat.ForeColor = Color.Red
+                lblServerStat.Text = "Incompatible server version"
+                btnLogin.Enabled = False
+            Case 2
+                lblServerStat.ForeColor = Color.Lime
+                lblServerStat.Text = "Trusted Directory"
+                btnLogin.Enabled = True
+            Case 3
+                lblServerStat.ForeColor = Color.Yellow
+                lblServerStat.Text = "Certificate invalid"
+                btnLogin.Enabled = False
+        End Select
+
+    End Sub
+
+    Private Sub logo_Click(sender As Object, e As EventArgs) Handles logo.Click
+        debugc += 1
+
+        'Has the logo been clicked 10 times since init? If so, open debug window.
+        '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        '                                           DISABLE THIS BEFORE FINAL RELEASE, HOLLY!!!
+        '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        If debugc = 10 Then
+            debug.Enabled = True
+            debug.Show()
+        End If
+
+    End Sub
 End Class
