@@ -30,8 +30,8 @@ Partial Class login
         flashmessage = New Timer(components)
         btnLogin = New Button()
         txtServer = New TextBox()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
+        txtUsername = New TextBox()
+        txtPassword = New TextBox()
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -107,21 +107,22 @@ Partial Class login
         txtServer.Size = New Size(363, 23)
         txtServer.TabIndex = 5
         ' 
-        ' TextBox1
+        ' txtUsername
         ' 
-        TextBox1.Location = New Point(623, 441)
-        TextBox1.Margin = New Padding(3, 2, 3, 2)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(363, 23)
-        TextBox1.TabIndex = 6
+        txtUsername.Location = New Point(623, 441)
+        txtUsername.Margin = New Padding(3, 2, 3, 2)
+        txtUsername.Name = "txtUsername"
+        txtUsername.Size = New Size(363, 23)
+        txtUsername.TabIndex = 6
         ' 
-        ' TextBox2
+        ' txtPassword
         ' 
-        TextBox2.Location = New Point(623, 500)
-        TextBox2.Margin = New Padding(3, 2, 3, 2)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(363, 23)
-        TextBox2.TabIndex = 7
+        txtPassword.Location = New Point(623, 500)
+        txtPassword.Margin = New Padding(3, 2, 3, 2)
+        txtPassword.Name = "txtPassword"
+        txtPassword.PasswordChar = "*"c
+        txtPassword.Size = New Size(363, 23)
+        txtPassword.TabIndex = 7
         ' 
         ' Label1
         ' 
@@ -207,8 +208,8 @@ Partial Class login
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
+        Controls.Add(txtPassword)
+        Controls.Add(txtUsername)
         Controls.Add(txtServer)
         Controls.Add(btnLogin)
         Controls.Add(lblEdition)
@@ -232,8 +233,8 @@ Partial Class login
     Friend WithEvents flashmessage As Timer
     Friend WithEvents btnLogin As Button
     Friend WithEvents txtServer As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtUsername As TextBox
+    Friend WithEvents txtPassword As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label

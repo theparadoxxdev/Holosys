@@ -4,6 +4,7 @@
     Public version As String
     Public edition, serverstatus, debugc As Integer
     Public licensevalid, istestlicense As Boolean
+    Dim username, password As String
 
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -113,7 +114,27 @@
         If debugc = 10 Then
             debug.Enabled = True
             debug.Show()
+            debugc = 0
         End If
+
+    End Sub
+
+    Private Sub chkUseWinCred_CheckedChanged(sender As Object, e As EventArgs) Handles chkUseWinCred.CheckedChanged
+
+        Select Case chkUseWinCred.Checked
+            Case True
+                txtUsername.Enabled = False
+                txtPassword.Enabled = False
+                username = Nothing   'Need to find a way to grab Windows logon username
+                password = Nothing   'Need to find a way to grab Windows logon password (Please Microsoft, please say you make this extremely hard for security reasons)
+                txtUsername.Text = username
+                txtPassword.Text = password
+            Case False
+                txtUsername.Enabled = True
+                txtPassword.Enabled = True
+                username = Nothing
+                password = Nothing
+        End Select
 
     End Sub
 End Class
