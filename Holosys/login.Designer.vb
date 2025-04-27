@@ -56,7 +56,7 @@ Partial Class login
         ' lblVersion
         ' 
         lblVersion.AutoSize = True
-        lblVersion.Font = New Font("Trebuchet MS", 24F, FontStyle.Regular, GraphicsUnit.Point)
+        lblVersion.Font = New Font("Trebuchet MS", 24F)
         lblVersion.ForeColor = Color.White
         lblVersion.Location = New Point(25, 334)
         lblVersion.Name = "lblVersion"
@@ -66,7 +66,7 @@ Partial Class login
         ' lblLicense
         ' 
         lblLicense.AutoSize = True
-        lblLicense.Font = New Font("Trebuchet MS", 24F, FontStyle.Regular, GraphicsUnit.Point)
+        lblLicense.Font = New Font("Trebuchet MS", 24F)
         lblLicense.ForeColor = Color.White
         lblLicense.Location = New Point(25, 408)
         lblLicense.Name = "lblLicense"
@@ -76,7 +76,7 @@ Partial Class login
         ' lblEdition
         ' 
         lblEdition.AutoSize = True
-        lblEdition.Font = New Font("Trebuchet MS", 24F, FontStyle.Regular, GraphicsUnit.Point)
+        lblEdition.Font = New Font("Trebuchet MS", 24F)
         lblEdition.ForeColor = Color.White
         lblEdition.Location = New Point(25, 371)
         lblEdition.Name = "lblEdition"
@@ -90,7 +90,7 @@ Partial Class login
         ' btnLogin
         ' 
         btnLogin.Enabled = False
-        btnLogin.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnLogin.Font = New Font("Trebuchet MS", 12F)
         btnLogin.Location = New Point(903, 540)
         btnLogin.Margin = New Padding(3, 2, 3, 2)
         btnLogin.Name = "btnLogin"
@@ -101,7 +101,7 @@ Partial Class login
         ' 
         ' txtServer
         ' 
-        txtServer.Location = New Point(623, 59)
+        txtServer.Location = New Point(622, 62)
         txtServer.Margin = New Padding(3, 2, 3, 2)
         txtServer.Name = "txtServer"
         txtServer.Size = New Size(363, 23)
@@ -127,7 +127,7 @@ Partial Class login
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Font = New Font("Trebuchet MS", 12F)
         Label1.ForeColor = SystemColors.Control
         Label1.Location = New Point(745, 38)
         Label1.Name = "Label1"
@@ -138,7 +138,7 @@ Partial Class login
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Font = New Font("Trebuchet MS", 12F)
         Label2.ForeColor = SystemColors.Control
         Label2.Location = New Point(759, 408)
         Label2.Name = "Label2"
@@ -149,7 +149,7 @@ Partial Class login
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label3.Font = New Font("Trebuchet MS", 12F)
         Label3.ForeColor = SystemColors.Control
         Label3.Location = New Point(759, 471)
         Label3.Name = "Label3"
@@ -160,7 +160,7 @@ Partial Class login
         ' lblServerStat
         ' 
         lblServerStat.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom
-        lblServerStat.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        lblServerStat.Font = New Font("Trebuchet MS", 12F)
         lblServerStat.ForeColor = Color.Lime
         lblServerStat.Location = New Point(623, 98)
         lblServerStat.Name = "lblServerStat"
@@ -183,7 +183,7 @@ Partial Class login
         ' chkUseWinCred
         ' 
         chkUseWinCred.AutoSize = True
-        chkUseWinCred.Font = New Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        chkUseWinCred.Font = New Font("Trebuchet MS", 12F)
         chkUseWinCred.ForeColor = SystemColors.Control
         chkUseWinCred.Location = New Point(623, 540)
         chkUseWinCred.Name = "chkUseWinCred"

@@ -10,7 +10,7 @@
 
         'Initialize variables
         debugc = 0
-        version = Me.ProductVersion
+        version = "0.1.0"
         edition = 2
         licensevalid = False
         istestlicense = False
@@ -125,15 +125,15 @@
             Case True
                 txtUsername.Enabled = False
                 txtPassword.Enabled = False
-                username = Nothing   'Need to find a way to grab Windows logon username
-                password = Nothing   'Need to find a way to grab Windows logon password (Please Microsoft, please say you make this extremely hard for security reasons)
+                username = System.Environment.UserDomainName + "\" + System.Environment.UserName()
                 txtUsername.Text = username
-                txtPassword.Text = password
             Case False
                 txtUsername.Enabled = True
                 txtPassword.Enabled = True
                 username = Nothing
                 password = Nothing
+                txtUsername.Text = username
+                txtPassword.Text = password
         End Select
 
     End Sub
