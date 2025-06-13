@@ -8,12 +8,25 @@
 
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'Initialize variables
+        'Initialize perm vars
         debugc = 0
         version = "0.1.0"
         edition = 2
         licensevalid = False
         istestlicense = False
+
+        'Define and init temp checkup vars; Check current display resolution and display scaling; Warn of unexpected behavior if resolution is less than 1280x720 or scaling is above 100% 
+        Dim scrw As Integer = Screen.PrimaryScreen.Bounds.Width
+        Dim scrh As Integer = Screen.PrimaryScreen.Bounds.Height
+        Dim scalingset As Integer
+
+        If scrw <= 1280 Or scrh <= 720 Then
+            MessageBox.Show("Your current screen resolution is smaller than 1280x720. Unexpected behavior, such as interface elements not displaying, can occur when using a screen resolution lower than 1280x720.", "Holosys Warning")
+        End If
+
+        If scalingset >= 100 Then
+            MessageBox.Show("Your current display scaling is set to a value larger than 100%. Unexpected behavior, such as interface elements displaying incorrectly, can occur when display scaling in Windows is set to a value greater than 100%.", "Holosys Warning")
+        End If
 
         'Display installed version
         lblVersion.Text = Version
